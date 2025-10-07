@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Blog</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style.css">
+ <script src="./script.js" defer></script>
 </head>
 <body>
 
@@ -16,14 +16,14 @@
     <form id="postForm">
       <div class="form-group">
         <label for="postTitle">Title:</label>
-        <input type="text" id="'postTile" name="title" placeholder="Enter a post title" required>
+        <input type="text" id="postTitle" name="title" placeholder="Enter a post title" required>
         <span class="error-message" id="titleError"></span>
       </div>
 
       <div class="form-group">
         <label for="postContent">Content:</label>
         <textarea id="postContent" name="content" placeholder="Write your post" required></textarea>
-        <span class="error-message" id="titleError"></span>
+        <span class="error-message" id="contentError"></span>
       </div>
       
       <button type="submit">Submit Post</button>
@@ -31,10 +31,9 @@
   </section>
 
   <section id="post-list">
-
-  </section>
    <h2>Blog Posts</h2>
    <div id="postsContainer"></div>
   </section>
+
 </body>
 </html>
