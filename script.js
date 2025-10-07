@@ -33,7 +33,7 @@ function renderPosts() {
     postDiv.classList.add('post');
 
     const titleEl = document.createElement('h3');
-    titleEl.textcontent = post.title;
+    titleEl.textContent = post.title;
 
     const contentEl = document.createElement('p');
     contentEl.textContent = post.content;
@@ -55,7 +55,10 @@ function renderPosts() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  //--- Form Submission---
+
+  // ---------------------------
+  // Delete Post Function
+  // ---------------------------
   postForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -81,16 +84,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!valid) return;
 
-    // Adding a new post object
+    // Adding a new post object with Id, and timestamp
     const newPost = {
+      id: Date.now(), // ---> creates a unique ID based on current time
       title: titleValue,
       content: contentValue,
+      timestamp: new Date().toLocaleDateString(), // ---> READ TIMESTAMP
     };
 
+    // adding new post to the array
     posts.push(newPost);
-    // Saving to localStorage
+
+    // Saving updated post to localStorage
     localStorage.setItem("posts", JSON.stringify(posts));
-    renderPosts(); // Re-render posts
+
+    // re-render the posts
+    renderPosts(); 
 
     // Clearing the form fields
     postForm.reset();
